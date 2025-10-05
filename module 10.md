@@ -1,3 +1,13 @@
+##  Advanced-C-Lab-Manual
+
+## Module - 10
+
+```
+Name: ARSHIYA M
+Regno: 212224040029
+
+```
+
 EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
 Aim:
 To write a C program to search a given element in the given linked list.
@@ -10,11 +20,50 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+struct Node{
+    struct Node *next; 
+    char data;
+}*head;
+void search(char data)
+{
+    struct Node *ptr;
+    char item=data; 
+    int i=0,flag;
+    ptr = head; 
+    if(ptr == NULL)
+    {
+        printf("Empty List\n");
+        
+    }
+    else
+    {
+        while (ptr!=NULL)
+        {
+            if(ptr->data == item)
+            {
+                printf("item %c found at location %d ",item,i+1); 
+                flag=0;
+                
+            }
+            i++;
+            ptr = ptr -> next;
+            
+        }
+        if(flag!=0)
+        {
+            printf("Item not found\n");
+            
+        }
+}
+
+}
+```
 
 Output:
 
-//paste your output here
+<img width="567" height="395" alt="image" src="https://github.com/user-attachments/assets/234c5b4e-b83a-4007-8267-209e00a0577e" />
+
 
 
 
@@ -34,11 +83,39 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+struct Node{ 
+    char data;
+    struct Node *next;
+}*head;
+
+void insert(char data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+    if(head==NULL)
+    {
+        head=n;
+        n->data=data; 
+        n->next=NULL; 
+        temp=head; 
+        return;
+}
+while(temp->next!=NULL)
+{
+    temp=temp->next;
+}
+n->data=data; 
+n->next=NULL;
+temp->next=n;
+}
+```
 
 Output:
 
-//paste your output here
+<img width="377" height="337" alt="image" src="https://github.com/user-attachments/assets/f9111d62-0cfc-481f-9baf-d86ed8ac4978" />
+
 
  
 Result:
@@ -58,11 +135,30 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+struct Node
+{
+    struct Node *prev; 
+    struct Node *next; 
+    int data;
+}*head;
+void display()
+{
+    struct Node *temp; 
+    temp=head; 
+    while(temp!=0)
+    {
+        printf("%d ",temp->data); 
+        temp=temp->next;
+        
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="311" height="376" alt="image" src="https://github.com/user-attachments/assets/1e3b21ff-a632-41ea-add3-c4a8da8d9110" />
 
 
 Result:
@@ -83,11 +179,48 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
+void insert(float data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+if(head==NULL)
+{
+    head=n;
+    n->data=data;
+    n->next=NULL; 
+    n->prev=NULL; 
+    temp=head;
+}
+else
+{
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+        
+    }
+    n->data=data; 
+    n->next=NULL; 
+    n->prev=temp; 
+    temp->next=n;
+    
+}
+
+
+}
+```
 
 Output:
 
-//paste your output here
+<img width="375" height="512" alt="image" src="https://github.com/user-attachments/assets/616d2ac8-3f56-4be2-aab6-74634d82d99a" />
+
 
 
 Result:
@@ -125,11 +258,37 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 Program:
 
-//type your code here
+```
+
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
+void delete()
+{
+    if(head==NULL){
+        printf("List is empty\n");
+        return;
+    }
+    else if(head->next==NULL){
+        head=NULL;
+        free(head);
+        printf("Node deleted from the begining ...\n");
+    }
+    else{
+        struct Node *ptr;
+        ptr=head;
+        head=head->next;
+        free(ptr);
+        printf("Node deleted from the begining ...\n");
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="945" height="627" alt="image" src="https://github.com/user-attachments/assets/8b604f8a-0b66-491b-94a5-452305d3175a" />
+
 
 
 
