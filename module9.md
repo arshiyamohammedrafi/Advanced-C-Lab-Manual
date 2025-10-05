@@ -1,3 +1,12 @@
+## Advanced-C-Lab-Manual
+
+## Module - 09
+
+```
+Name: ARSHIYA M
+Regno: 212224040029
+```
+
 EXP NO:11 C PROGRAM TO DISPLAY STACK ELEMENTS USING AN ARRAY.
 
 Aim:
@@ -13,11 +22,21 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int stack[40],top,i;
+ void display()
+{
+for(i=top;i>=0;i--)
+{
+printf("%d\n",stack[i]);
+}
+}
+```
 
 Output:
 
-//paste your output here
+<img width="233" height="421" alt="image" src="https://github.com/user-attachments/assets/37a124a1-05b6-457f-81ab-0001878bdc43" />
+
 
 
 
@@ -36,11 +55,29 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int size=3,top=1;
+float stack[40];
+void push (float data)
+{
+    if (top==size-1 )
+    {
+        printf("stack is full\n");
+        
+    }
+    else
+    {
+        top ++;
+        stack[top] = data;
+        
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="434" height="373" alt="image" src="https://github.com/user-attachments/assets/c8a602bf-0bcc-4a75-96d6-aa8f0729a8b3" />
+
 
 
 
@@ -62,11 +99,31 @@ Algorithm:
  
 Program:
 
-//type your code here
+```
+int queue[50], rear, front,i;
+void display()
+{
+    if(front==-1)
+    {
+        printf("No elements to display");
+        
+    }
+    else
+    {
+        for(i=front;i<=rear;i++)
+        {
+            printf("%d ",queue[i]);
+            
+        }
+        
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="472" height="387" alt="image" src="https://github.com/user-attachments/assets/07cd6f6f-eecd-4a96-9d9e-7221d19f45d8" />
+
 
 
 Result:
@@ -86,11 +143,28 @@ Algorithm:
 
 Program:
 
-//type your code here
+```
+int size=4, rear=-1, front=-1; 
+float queue[50];
+void enqueue(float data)
+{
+    if(rear<size)
+    {
+        if(front==-1)
+        {
+            front=0;
+        }
+        rear=rear+1;
+        queue[rear]=data;
+        
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="542" height="285" alt="image" src="https://github.com/user-attachments/assets/6a04a435-a166-4e5a-b226-adc75af4e307" />
+
 
 Result:
 Thus, the program to insert elements in queue using array is verified successfully.
@@ -120,12 +194,23 @@ o	After deletion, check if the front pointer has passed the rear pointer (front 
 
 
 Program:
-
-//type your code here
+```
+int front, rear;
+void dequeue()
+{
+    if(front==-1&&rear==-1)
+    printf("Queue Underflow.");
+    else if(front==rear)
+    front=rear=-1;
+    else{
+        front=front+1;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="945" height="769" alt="image" src="https://github.com/user-attachments/assets/225d1592-ea12-4c7e-8797-ae168a5a164f" />
 
 
 Result:
